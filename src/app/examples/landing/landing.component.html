@@ -1,0 +1,94 @@
+<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/Clinical6.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <!--<h1>Clínica San Luis</h1>-->
+			            <br />
+            <h3><strong>Los mejores médicos de Lima para atenderlo.</strong></h3>
+            <br />
+			<label style="font-size:x-large"><strong>Home /</strong></label>
+			<br />
+			<label style="font-size:xx-large"><strong>Staff Médico</strong></label>
+        </div>
+    </div>
+</div>
+<div class="main" >
+    <div class="section text-center" style="background-image: url('./assets/img/listado2.jpg');">
+        <div class="container" >
+        <div class="container-div">
+            <label class="title-div">
+                <strong >SIÉNTETE TRANQUILO, CON NUESTRAS ESPECIALIDADES</strong>
+            </label>
+	        <br />
+            <label class="title-div">
+                <strong>TIENES TODO LO QUE TU SALUD NECESITA.</strong>
+            </label>
+        </div>
+        <div class="container-filter">
+            <span>Filtrar por :</span>
+            <mat-form-field class="form-style" appearance="fill">
+                <mat-label class="label-style">ESPECIALIDADES</mat-label>
+                <mat-select  (selectionChange)="changeEspecialidad($event.value)">
+                    <mat-option value>[Seleccione]</mat-option>
+                    <mat-option value="Cardiologia">Cardiologia</mat-option>
+                    <mat-option value="Neumologia">Neumologia</mat-option>
+                    <mat-option value="Nutrición">Nutrición</mat-option>
+                    <mat-option value="Medicina General">Medicina General</mat-option>
+                    <mat-option value="Psiquiatría y Psicología">Psiquiatría y Psicología</mat-option>
+                    <mat-option value="Odontología">Odontología</mat-option>
+                    <mat-option value="Pediatría">Pediatría</mat-option>
+                    <mat-option value="Nutrición">Nutrición</mat-option>
+                    <mat-option value="Ginecología">Ginecología</mat-option>
+                    <mat-option value="Oncología">Oncología</mat-option>
+                    <mat-option value="Radiología">Radiología</mat-option>
+                    <mat-option value="Oftalmología">Oftalmología</mat-option>
+                    <mat-option value="Gastroenterología">Gastroenterología</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>   
+        <mat-card *ngFor="let person of persons | paginate: { id: 'id_pagination',
+                                                    itemsPerPage: 5,
+                                                    currentPage: page,
+                                                    totalItems: totalRecords }">
+            <mat-card-header>
+              <mat-card-title>{{person.nom_usu}} {{person.apellidos}}</mat-card-title>
+              <mat-card-subtitle>{{person.especialidad}}</mat-card-subtitle>
+            </mat-card-header>       
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="#avatar"><img src="./assets/img/faces/medico.jpg" alt="..."></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-block vertical-align">
+                            <p class="card-description text-center">
+                                Email : {{person.correo}}
+                            </p>
+                            <p class="card-description text-center">
+                                Telefono : {{person.telefono}}
+                            </p>
+                            <p class="card-description text-center">
+                                Direccion : {{person.direccion}}
+                            </p>
+                            <a class="boton_1" href="tel:{{person.telefono}}">Llamar</a>    
+                        </div>
+                    </div>      
+                    
+                </div>     
+            </mat-card-content>
+        </mat-card>
+
+        <pagination-controls  id="id_pagination"
+                      (pageChange)="page = $event"
+                      maxSize="5"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true">
+        </pagination-controls>
+        </div>
+    </div>
+</div>

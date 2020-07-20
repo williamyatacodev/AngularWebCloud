@@ -1,0 +1,83 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$pk2-angular-primary: mat-palette($mat-indigo);
+$pk2-angular-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$pk2-angular-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$pk2-angular-theme: mat-light-theme($pk2-angular-primary, $pk2-angular-accent, $pk2-angular-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($pk2-angular-theme);
+
+/*!
+
+ =========================================================
+ * Paper Kit 2 Angular - v1.3.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/paper-kit-2-angular
+ * Copyright 2017 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/timcreative/paper-kit/blob/master/LICENSE.md)
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+@import "paper-kit/variables";
+@import "paper-kit/mixins";
+
+@import "paper-kit/typography";
+
+// Core CSS
+@import "paper-kit/misc";
+@import "paper-kit/buttons";
+@import "paper-kit/inputs";
+@import "paper-kit/progress-bars";
+@import "paper-kit/sliders";
+@import "paper-kit/alerts";
+@import "paper-kit/labels";
+@import "paper-kit/tooltips-and-popovers";
+@import "paper-kit/sections";
+@import "paper-kit/checkbox-radio";
+@import "paper-kit/navbars";
+@import "paper-kit/images";
+@import "paper-kit/cards";
+@import "paper-kit/footers";
+
+
+// Bootstrap Switch
+@import "paper-kit/bootstrap-switch";
+
+// Fancy Stuff
+@import "paper-kit/dropdown";
+//
+// icons
+@import "paper-kit/icons";
+//
+@import "paper-kit/tabs-navs-pagination";
+@import "paper-kit/collapse";
+@import "paper-kit/carousel";
+@import "paper-kit/modal";
+//
+@import "paper-kit/responsive";
+@import "paper-kit/plugins/datetimepicker";
+@import "paper-kit/social-buttons";
+@import "paper-kit/examples";
